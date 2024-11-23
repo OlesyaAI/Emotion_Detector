@@ -1,5 +1,5 @@
 # Changes commited: 11/22/2024 
-# Task 1: Create an emotion detection application using the Watson NLP library (see emotion_detection.py file for teh code) 
+# Task 1: Create an emotion detection application using the Watson NLP library (see emotion_detection.py file for code) 
 
 # For this project,  the Emotion Predict function of the Watson NLP Library is used 
 # Note that the text_to_analyze is being used as a variable that holds the actual written text that needs to be analyzed.
