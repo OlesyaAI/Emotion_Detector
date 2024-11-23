@@ -5,8 +5,7 @@
 # Note that the text_to_analyze is being used as a variable that holds the actual written text that needs to be analyzed.
 
 # 1. Create a folder in the Terminal: mkdir final_project 
-# 2. Clone git repository: git clone <insert your repository url>
-# Get familiar with git comands: https://author-ide.skills.network/render?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZF9pbnN0cnVjdGlvbnNfdXJsIjoiaHR0cHM6Ly9jZi1jb3Vyc2VzLWRhdGEuczMudXMuY2xvdWQtb2JqZWN0LXN0b3JhZ2UuYXBwZG9tYWluLmNsb3VkLzlZcXowOWxZYWdUSF9FbzVjOUJYcVEvR2V0JTIwZmFtaWxpYXIlMjB3aXRoJTIwR2l0JTIwQ29tbWFuZHMtdjEubWQiLCJ0b29sX3R5cGUiOiJpbnN0cnVjdGlvbmFsLWxhYiIsImF0bGFzX2ZpbGVfaWQiOjYzOTgyLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTczMDIzNTA4MX0.7kNwCz6sxD4M2zLIdQg-31fMdh9Idqlp_2ulyL1XLg8 
+# 2. Clone git repository: git clone <insert your repository url here>
 
 # 3. Create a file named emotion_detection.py in final_project folder.
 # 4. Create a file "__init__.py" and within the file state the following: 
