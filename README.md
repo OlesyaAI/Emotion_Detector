@@ -16,6 +16,10 @@ from emotional_detection import emotion_detector
 import requests # Import the requests library to handle the HTTP requests 
 
 # Difine a function named emotion_detector that takes a string input text_to_analyze
+
+import requests # Import the requests library to handle the HTTP requests 
+
+# Difine a function named emotion_detector that takes a string input text_to_analyze
 def emotion_detector(text_to_analyze):
 
     # The URL of the Emotion Predict function 
