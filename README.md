@@ -82,15 +82,15 @@ import json
     {"emotionPredictions":[{"emotion":{"anger":0.0043079085, "disgust":0.00041127237, "fear":0.0037504788, "joy":0.9918804, "sadness":0.014091322}, "target":"", "emotionMentions":[{"span":{"begin":0, "end":29, "text":"I am so happy I am doing this"}, "emotion":{"anger":0.0043079085, "disgust":0.00041127237, "fear":0.0037504788, "joy":0.9918804, "sadness":0.014091322}}]}], "producerId":{"name":"Ensemble Aggregated Emotion Workflow", "version":"0.0.1"}}
 
 # TASK 3: PACKAGE THE PREVIOUSLY CREATED APPLICATION
-# 3.1 Create a package folder within final_project.py follder 
-mkdir EmotionDetection
+# 3.1 Create a package folder within final_project.py folder 
+    mkdir EmotionDetection
 # 3.2 Move emotion_detection and __init__ files into EmotionDetection package 
-mv ./emotion_detection.py ./EmotionDetection
-mv ./__init__.py ./EmotionDetection
+    mv ./emotion_detection.py ./EmotionDetection
+    mv ./__init__.py ./EmotionDetection
 # 3.3 Modify the contents of __init__.py file and test the appliation within the package (inside of Python shell): 
->>> from EmotionDetection.emotion_detection import emotion_detector
->>> emotion_detector("I hate working long hours")
-Dominant Emotion: anger with a score of 0.64949876
+    >>> from EmotionDetection.emotion_detection import emotion_detector
+    >>> emotion_detector("I hate working long hours")
+    Dominant Emotion: anger with a score of 0.64949876
 
 
 
