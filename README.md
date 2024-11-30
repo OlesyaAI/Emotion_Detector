@@ -1,4 +1,12 @@
-# Changes commited: 11/22/2024 
+## Disclaimer
+
+This project is inspired by a lab exercise from the [Coursera Course: "Developing AI Application with Python and Flask tought by Abhishek Gagneja and Ramesh Sannareddy]: https://www.coursera.org/learn/python-project-for-ai-application-development/home/info
+
+While the concepts and methodology are based on the lab, the implementation and code in this repository were written to demonstrate my understanding and skills. This project does not contain any proprietary materials or solutions provided by Coursera, and all datasets used here are either publicly available or synthetic.
+
+If you are currently enrolled in the course, I encourage you to complete the lab exercises independently to maximize your learning experience.
+
+# Changes commited: 11/29/2024 
 # Task 1: Create an emotion detection application using the Watson NLP library (see emotion_detection.py file for code) 
 
 # For this project,  the Emotion Predict function of the Watson NLP Library is used 
@@ -12,10 +20,6 @@
 from emotional_detection import emotion_detector 
 
 # 5. In the emotion_detection.py file, write the function to run emotion detection using the appropriate Emotion Detection function. Name this function emotion_detector. Note: Assume that that text to be analyzed is passed to the function as an argument and is stored in the variable text_to_analyze. The value being returned must be the text attribute of the response object as received from the Emotion Detection function.
-
-import requests # Import the requests library to handle the HTTP requests 
-
-# Difine a function named emotion_detector that takes a string input text_to_analyze
 
 import requests # Import the requests library to handle the HTTP requests 
 
