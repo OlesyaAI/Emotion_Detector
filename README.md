@@ -12,14 +12,14 @@ If you are currently enrolled in the course, I encourage you to complete the lab
 # For this project,  the Emotion Predict function of the Watson NLP Library is used 
 # Note that the text_to_analyze is being used as a variable that holds the actual written text that needs to be analyzed.
 
-# 1. Create a folder in the Terminal: mkdir final_project 
-# 2. Clone git repository: git clone <insert your repository url here>
+# 1.1 Create a folder in the Terminal: mkdir final_project 
+# 1.2 Clone git repository: git clone <insert your repository url here>
 
-# 3. Create a file named emotion_detection.py in final_project folder.
-# 4. Create a file "__init__.py" and within the file state the following: 
+# 1.3 Create a file named emotion_detection.py in final_project folder.
+# 1.4 Create a file "__init__.py" and within the file state the following: 
 from emotional_detection import emotion_detector 
 
-# 5. In the emotion_detection.py file, write the function to run emotion detection using the appropriate Emotion Detection function. Name this function emotion_detector. Note: Assume that that text to be analyzed is passed to the function as an argument and is stored in the variable text_to_analyze. The value being returned must be the text attribute of the response object as received from the Emotion Detection function.
+# 1.5 In the emotion_detection.py file, write the function to run emotion detection using the appropriate Emotion Detection function. Name this function emotion_detector. Note: Assume that that text to be analyzed is passed to the function as an argument and is stored in the variable text_to_analyze. The value being returned must be the text attribute of the response object as received from the Emotion Detection function.
 
 import requests # Import the requests library to handle the HTTP requests 
 
@@ -41,21 +41,22 @@ def emotion_detector(text_to_analyze):
     # Return the response text from the API
     return response.text 
 
-# 6. Import the application 
-# 7. After successful import of the application, test your application in Python shell with "I love this new technology" 
+# 1.6 Import the application 
+# 1.7 After successful import of the application, test your application in Python shell with "I love this new technology" 
     from emotion_detection import emotion_detector 
     emotion_detector("I love this new technology") 
 # The following should be received: '{"emotionPredictions":[{"emotion":{"anger":0.0132405795, "disgust":0.0020517302, "fear":0.009090992, "joy":0.9699522, "sadness":0.054984167}, "target":"", "emotionMentions":[{"span":{"begin":0, "end":26, "text":"I love this new technology"}, "emotion":{"anger":0.0132405795, "disgust":0.0020517302, "fear":0.009090992, "joy":0.9699522, "sadness":0.054984167}}]}], "producerId":{"name":"Ensemble Aggregated Emotion Workflow", "version":"0.0.1"}}'
 
 # TASK 2: FORMAT THE OUTPUT OF THE APPLICATION 
 
-# 8 Convert the response text into dictionary using json library function 
+# 2.1 Convert the response text into dictionary using json library function 
     import json 
-# 9 Write the code logic to find the dominant emotion (see the updated code): 
+# 2.2 Write the code logic to find the dominant emotion (see the updated code): 
 
 import requests  # Import the requests library to handle HTTP requests
 import json
 
+>>> UPDATED CODE START >>> 
 # Define a function named emotion detection that takes a string input (text_to_analyse)
     def emotion_detector(text_to_analyse): 
 # URL of the emotion detection service
@@ -70,12 +71,27 @@ import json
     formatted_response = json.loads(response.text) 
 # Extracting emotions
     emotion = formatted_response['emotionPredictions'][0]['emotion']
-# Test the application in Python shell again with the statement "I am so happy I am doing this" (continue this input in the same terminal): 
+
+>>> UPDATED CODE END >>> 
+    
+#2.3 Test the application in Python shell again with the statement "I am so happy I am doing this" (continue this input in the same terminal): 
     >>> import json 
     >>> from emotion_detection import emotion_detector
     >>> response = emotion_detector("I am so happy I am doing this")
     >>> print(response)
     {"emotionPredictions":[{"emotion":{"anger":0.0043079085, "disgust":0.00041127237, "fear":0.0037504788, "joy":0.9918804, "sadness":0.014091322}, "target":"", "emotionMentions":[{"span":{"begin":0, "end":29, "text":"I am so happy I am doing this"}, "emotion":{"anger":0.0043079085, "disgust":0.00041127237, "fear":0.0037504788, "joy":0.9918804, "sadness":0.014091322}}]}], "producerId":{"name":"Ensemble Aggregated Emotion Workflow", "version":"0.0.1"}}
+
+# TASK 3: PACKAGE THE PREVIOUSLY CREATED APPLICATION
+# 3.1 Create a package folder within final_project.py follder 
+mkdir EmotionDetection
+# 3.2 Move emotion_detection and __init__ files into EmotionDetection package 
+mv ./emotion_detection.py ./EmotionDetection
+mv ./__init__.py ./EmotionDetection
+# 3.3 Modify the contents of __init__.py file and test the appliation within the package (inside of Python shell): 
+>>> from EmotionDetection.emotion_detection import emotion_detector
+>>> emotion_detector("I hate working long hours")
+Dominant Emotion: anger with a score of 0.64949876
+
 
 
 
