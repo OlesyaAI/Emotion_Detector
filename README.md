@@ -6,7 +6,7 @@ While the concepts and methodology are based on the lab, the implementation and 
 
 If you are currently enrolled in the course, I encourage you to complete the lab exercises independently to maximize your learning experience.
 
-# Changes commited: 11/29/2024 
+# Changes commited: 11/30/2024 
 # TASK 1: CREATE AN EMOTION DETECTION APPLICATION USING THE WATSON NLP LIBRARY (SEE THE emotion_detection.py FILE FOR CODE) 
 
 # For this project,  the Emotion Predict function of the Watson NLP Library is used 
