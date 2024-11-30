@@ -7,7 +7,7 @@ While the concepts and methodology are based on the lab, the implementation and 
 If you are currently enrolled in the course, I encourage you to complete the lab exercises independently to maximize your learning experience.
 
 # Changes commited: 11/29/2024 
-# Task 1: Create an emotion detection application using the Watson NLP library (see emotion_detection.py file for code) 
+# TASK 1: CREATE AN EMOTION DETECTION APPLICATION USING THE WATSON NLP LIBRARY (SEE THE emotion_detection.py FILE FOR CODE) 
 
 # For this project,  the Emotion Predict function of the Watson NLP Library is used 
 # Note that the text_to_analyze is being used as a variable that holds the actual written text that needs to be analyzed.
@@ -43,9 +43,44 @@ def emotion_detector(text_to_analyze):
 
 # 6. Import the application 
 # 7. After successful import of the application, test your application in Python shell with "I love this new technology" 
-from emotion_detection import emotion_detector 
-emotion_detector("I love this new technology") 
+    from emotion_detection import emotion_detector 
+    emotion_detector("I love this new technology") 
 # The following should be received: '{"emotionPredictions":[{"emotion":{"anger":0.0132405795, "disgust":0.0020517302, "fear":0.009090992, "joy":0.9699522, "sadness":0.054984167}, "target":"", "emotionMentions":[{"span":{"begin":0, "end":26, "text":"I love this new technology"}, "emotion":{"anger":0.0132405795, "disgust":0.0020517302, "fear":0.009090992, "joy":0.9699522, "sadness":0.054984167}}]}], "producerId":{"name":"Ensemble Aggregated Emotion Workflow", "version":"0.0.1"}}'
+
+# TASK 2: FORMAT THE OUTPUT OF THE APPLICATION 
+
+# 8 Convert the response text into dictionary using json library function 
+    import json 
+# 9 Write the code logic to find the dominant emotion (see the updated code): 
+
+import requests  # Import the requests library to handle HTTP requests
+import json
+
+# Define a function named sentiment_analyzer that takes a string input (text_to_analyse)
+    def emotion_detector(text_to_analyse): 
+# URL of the sentiment analysis service
+    url = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'  
+# Create a dictionary with the text to be analyzed
+    myobj = { "raw_document": { "text": text_to_analyse } } 
+# Set the headers required for the API request
+    header = {"grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"} 
+# Send a POST request to the API with the text and headers
+    response = requests.post(url, json = myobj, headers = header)  
+# Parsing the json response from the API 
+    formatted_response = json.loads(response.text) 
+# Extracting emotions
+    emotion = formatted_response['emotionPredictions'][0]['emotion']
+# Test the application in Python shell again with the statement "I am so happy I am doing this" (continue this input in the same terminal): 
+    >>> import json
+    >>> from emotion_detection import emotion_detector
+    >>> response = emotion_detector("I love this new technology")
+    >>> formatted_response = json.loads(response)
+    >>> print(formatted_response)
+    {'emotionPredictions': [{'emotion': {'anger': 0.0132405795, 'disgust': 0.0020517302, 'fear': 0.009090992, 'joy': 0.9699522, 'sadness': 0.054984167}, 'target': '', 'emotionMentions': [{'span': {'begin': 0, 'end': 26, 'text': 'I love this new technology'}, 'emotion': {'anger': 0.0132405795, 'disgust': 0.0020517302, 'fear': 0.009090992, 'joy': 0.9699522, 'sadness': 0.054984167}}]}], 'producerId': {'name': 'Ensemble Aggregated Emotion Workflow', 'version': '0.0.1'}}
+
+
+
+
 
 
 
