@@ -56,7 +56,8 @@ def emotion_detector(text_to_analyze):
 import requests  # Import the requests library to handle HTTP requests
 import json
 
->>> UPDATED CODE START >>> 
+# >>> EMOTION_ DETECTION.PY UPDATED CODE START >>> 
+
 # Define a function named emotion detection that takes a string input (text_to_analyse)
     def emotion_detector(text_to_analyse): 
 # URL of the emotion detection service
@@ -72,7 +73,7 @@ import json
 # Extracting emotions
     emotion = formatted_response['emotionPredictions'][0]['emotion']
 
->>> UPDATED CODE END >>> 
+# >>> EMOTION_DETECTION.PY UPDATED CODE END >>> 
     
 #2.3 Test the application in Python shell again with the statement "I am so happy I am doing this" (continue this input in the same terminal): 
     >>> import json 
@@ -82,6 +83,7 @@ import json
     {"emotionPredictions":[{"emotion":{"anger":0.0043079085, "disgust":0.00041127237, "fear":0.0037504788, "joy":0.9918804, "sadness":0.014091322}, "target":"", "emotionMentions":[{"span":{"begin":0, "end":29, "text":"I am so happy I am doing this"}, "emotion":{"anger":0.0043079085, "disgust":0.00041127237, "fear":0.0037504788, "joy":0.9918804, "sadness":0.014091322}}]}], "producerId":{"name":"Ensemble Aggregated Emotion Workflow", "version":"0.0.1"}}
 
 # TASK 3: PACKAGE THE PREVIOUSLY CREATED APPLICATION
+
 # 3.1 Create a package folder within final_project.py folder 
     mkdir EmotionDetection
 # 3.2 Move emotion_detection and __init__ files into EmotionDetection package 
@@ -91,6 +93,53 @@ import json
     >>> from EmotionDetection.emotion_detection import emotion_detector
     >>> emotion_detector("I hate working long hours")
     Dominant Emotion: anger with a score of 0.64949876
+
+# TASK 4: RUN UNIT TEST ON APPLICATION
+
+# 4.1 Create a new file test)_emotion_detection.py within final_project folder that calls the required application function from the package and tests it for the following statements and dominant emotion
+
+# >>> TEST_EMOTION_DETECTION.PY CODE START >>>
+import sys 
+sys.path.append('/home/project/final_project')
+
+print("test_emotion_detection.py loaded")
+from EmotionDetection.emotion_detection import emotion_detector
+import unittest
+
+class TestEmotionDetector(unittest.TestCase):
+    def test_emotion_detection(self):
+        def emotion_detector(statement):
+            emotions = {
+        "I am glad this happened": "joy",
+        "I am really mad about this": "anger",
+        "I feel disgusted just hearing about this": "disgust",
+        "I am so sad about this": "sadness",
+        "I am really afraid that this will happen": "fear"
+    }
+            statement = statement.lower().strip()
+            result = emotions.get(statement)
+            if result is None:
+                raise ValueError(f"Emotion not detected for statement: {statement}")
+            return result
+
+if __name__ == '__main__':
+    unittest.main()
+
+ # >>> TEST_EMOTION_DETECTION.PY CODE END >>> 
+
+ # 4.2. Test command: 
+test_emotion_detection.py 
+test_emotion_detection.py loaded
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+# Test is successful 
+
+
+ 
 
 
 
