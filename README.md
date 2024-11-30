@@ -71,12 +71,11 @@ import json
 # Extracting emotions
     emotion = formatted_response['emotionPredictions'][0]['emotion']
 # Test the application in Python shell again with the statement "I am so happy I am doing this" (continue this input in the same terminal): 
-    >>> import json
+    >>> import json 
     >>> from emotion_detection import emotion_detector
-    >>> response = emotion_detector("I love this new technology")
-    >>> formatted_response = json.loads(response)
-    >>> print(formatted_response)
-    {'emotionPredictions': [{'emotion': {'anger': 0.0132405795, 'disgust': 0.0020517302, 'fear': 0.009090992, 'joy': 0.9699522, 'sadness': 0.054984167}, 'target': '', 'emotionMentions': [{'span': {'begin': 0, 'end': 26, 'text': 'I love this new technology'}, 'emotion': {'anger': 0.0132405795, 'disgust': 0.0020517302, 'fear': 0.009090992, 'joy': 0.9699522, 'sadness': 0.054984167}}]}], 'producerId': {'name': 'Ensemble Aggregated Emotion Workflow', 'version': '0.0.1'}}
+    >>> response = emotion_detector("I am so happy I am doing this")
+    >>> print(response)
+    {"emotionPredictions":[{"emotion":{"anger":0.0043079085, "disgust":0.00041127237, "fear":0.0037504788, "joy":0.9918804, "sadness":0.014091322}, "target":"", "emotionMentions":[{"span":{"begin":0, "end":29, "text":"I am so happy I am doing this"}, "emotion":{"anger":0.0043079085, "disgust":0.00041127237, "fear":0.0037504788, "joy":0.9918804, "sadness":0.014091322}}]}], "producerId":{"name":"Ensemble Aggregated Emotion Workflow", "version":"0.0.1"}}
 
 
 
